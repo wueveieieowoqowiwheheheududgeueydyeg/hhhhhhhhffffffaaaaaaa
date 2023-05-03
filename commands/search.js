@@ -59,7 +59,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "weather",
+            pattern: "طقس",
             category: "search",
             desc: "Sends weather info about asked place.",
             use: '<location>',
@@ -68,7 +68,7 @@ cmd({
         async(Void, citel, text) => {
             if (!text) return citel.reply("Give me location.Baka!!");
             let wdata = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=ar`
             );
             let textw = "";
             textw += `*🌟Weather of  ${text}*\n\n`;
@@ -190,7 +190,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "couplepp",
+            pattern: "تطقيم",
             category: "search",
             desc: "Sends two couples pics.",
             filename: __filename,
@@ -198,8 +198,8 @@ cmd({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `للولد` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `للبنت` }, { quoted: citel })
         }
     )
     //---------------------------------------------------------------------------
