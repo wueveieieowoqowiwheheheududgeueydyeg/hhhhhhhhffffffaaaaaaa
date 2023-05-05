@@ -214,7 +214,7 @@ cmd({
                 let buttons = [{
                         buttonId: `${prefix}pint ${text}`,
                         buttonText: {
-                            displayText: 'Next Image'
+                            displayText: 'الصورة التاليه'
                         },
                         type: 1
                     }
@@ -228,7 +228,7 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: `Here it is✨`,
+                            title: `تفضل الصوره✨`,
                             body: `${Config.ownername}`,
                             thumbnail: log0,
                             mediaType: 2,
@@ -334,7 +334,7 @@ cmd({
           i.type
         }\n🙈لمشاهدات : ${i.views}\n⌛الوقت : ${
           i.timestamp
-        }\n🌟تاريخ الرفع : ${i.ago}\n👑اوث : ${i.author.name}\n🎵Url : ${
+        }\n🌟تاريخ الرفع : ${i.ago}\n👑اوث : ${i.author.name}\n🎵الرابط : ${
           i.url
         }\n\n──────────────\n\n`;
             }
