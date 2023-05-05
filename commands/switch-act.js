@@ -13,7 +13,7 @@ const { cmd,sck,sck1, getAdmin, tlang, prefix } = require('../lib')
 const Config = require('../config')
     //---------------------------------------------------------------------------
 cmd({
-        pattern: "شغل",
+        pattern: "فعل",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -75,7 +75,7 @@ cmd({
                 break
             default:
                 {
-                    citel.reply("اختر وش تبي تشغل\n1-الاحداث\n2-البنك\n3-مضاد_روابط")
+                    citel.reply("اختر وش تبي تشغل\n1-الاحداث\n2-البنك\n3-الروابط")
                 }
         }
     }
