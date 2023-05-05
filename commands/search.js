@@ -166,8 +166,8 @@ cmd({
             if (!text) return citel.reply("مثال .صور لوفي")
  
             let name1 = text.split("|")[0] || `Luffy`
-            let name2 = text.split("|")[1] || `10`
-            citel.reply(`Sending images of ${name1} in chat`)
+            let name2 = text.split("|")[1] || `1  `
+            citel.reply(`ارسال الصور تبع ${name1} هنا`)
             let nn = name2
             for (let i = 0; i < nn; i++) {
 
