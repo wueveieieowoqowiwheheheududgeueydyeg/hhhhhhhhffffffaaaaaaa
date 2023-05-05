@@ -66,23 +66,23 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "فيد",
+            pattern: "video",
             desc: "Downloads video from yt.",
             category: "downloader",
             filename: __filename,
             use: '<faded-Alan Walker>',
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply(`مثال : ${prefix}video Back in black`)
+            if (!text) return citel.reply(`Example : ${prefix}video Back in black`)
             let yts = require("secktor-pack")
             let search = await yts(text)
             listSerch = []
-            teskd = `\nنتائج البحث ${text}.\n`
+            teskd = `\nResult got from ${text}.\n`
             for (let i of search.all) {
                 listSerch.push({
                     title: i.title,
                     rowId: `${prefix}ytmp4 ${i.url}`,
-                    description: `رايزل بوت / ${i.timestamp}`
+                    description: `Secktor / ${i.timestamp}`
                 })
             }
             const sections = [
@@ -96,7 +96,7 @@ cmd({
             const listMessage = {
                 text: teskd,
                 footer: tlang().footer,
-                title: ` *البحث في يوتيوب بواسطة  ${tlang().title}.*`,
+                title: ` *Youtube Search results by  ${tlang().title}.*`,
                 buttonText: "Videos",
                 mentions: await Void.parseMention(teskd),
                 sections
@@ -214,7 +214,7 @@ cmd({
                 let buttons = [{
                         buttonId: `${prefix}pint ${text}`,
                         buttonText: {
-                            displayText: 'الصورة التاليه'
+                            displayText: 'Next Image'
                         },
                         type: 1
                     }
@@ -228,7 +228,7 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: `تفضل الصوره✨`,
+                            title: `Here it is✨`,
                             body: `${Config.ownername}`,
                             thumbnail: log0,
                             mediaType: 2,
@@ -325,16 +325,16 @@ cmd({
         },
         async(Void, citel, text) => {
             let yts = require("secktor-pack");
-            if (!text) return citel.reply(`مثال : ${prefix}yts WhatsApp Bot by Suhail Tech`);
+            if (!text) return citel.reply(`Example : ${prefix}yts WhatsApp Bot by Suhail Tech`);
             let search = await yts(text);
             let textt = "*البحث في يوتيوب*\n\n Result From " + text + "\n\n───────────────────\n";
             let no = 1;
             for (let i of search.all) {
-                textt += `⚡ رقم : ${no++}\n ❤العنوان : ${i.title}\n♫ النوع : ${
+                textt += `⚡ No : ${no++}\n ❤العنوان : ${i.title}\n♫ Type : ${
           i.type
-        }\n🙈لمشاهدات : ${i.views}\n⌛الوقت : ${
+        }\n🙈الشماهدات : ${i.views}\n⌛Duration : ${
           i.timestamp
-        }\n🌟تاريخ الرفع : ${i.ago}\n👑اوث : ${i.author.name}\n🎵الرابط : ${
+        }\n🌟تاريخ الرفع : ${i.ago}\n👑Author : ${i.author.name}\n🎵Url : ${
           i.url
         }\n\n──────────────\n\n`;
             }

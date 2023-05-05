@@ -102,7 +102,7 @@ async(Void, citel, text,{ isCreator }) => {
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "readmore",
+             pattern: "اقرأ",
              desc: "Adds *readmore* in given text.",
              category: "misc",
              filename: __filename,
@@ -137,7 +137,7 @@ async(Void, citel, text,{ isCreator }) => {
                  citel.reply("*جار سرقة الحقوق*");
                 let sticker = new Sticker(media, {
                     pack: pack, // The pack name
-                    author: "بوت رايزل", // The author name
+                    author: author, // The author name
                     type: text.includes("--crop" || '-c') ? StickerTypes.CROPPED : StickerTypes.FULL,
                     categories: ["🤩", "🎉"], // The sticker category
                     id: "12345", // The sticker id
@@ -150,7 +150,7 @@ async(Void, citel, text,{ isCreator }) => {
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "uptihshsbwvme",
+             pattern: "وقت",
              alias: ["runtime"],
              desc: "Tells runtime/uptime of bot.",
              category: "misc",
@@ -158,7 +158,7 @@ async(Void, citel, text,{ isCreator }) => {
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             citel.reply(`Uptime of ${tlang().title}: ${upt}`)
+             citel.reply(`البوت شغال من ${tlang().title}: ${upt}`)
          }
      )
      //---------------------------------------------------------------------------
@@ -215,14 +215,14 @@ async(Void, citel, text,{ isCreator }) => {
              let buttons = [{
                      buttonId: `${prefix}act nsfw`,
                      buttonText: {
-                         displayText: "Turn On",
+                         displayText: "تشغيل",
                      },
                      type: 1,
                  },
                  {
                      buttonId: `${prefix}deact nsfw`,
                      buttonText: {
-                         displayText: "Turn Off",
+                         displayText: "اغلاق",
                      },
                      type: 1,
                  },
