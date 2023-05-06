@@ -328,7 +328,7 @@ cmd({
             const lvpoints = userq.level;
             var role = "ملك✨";
             if (lvpoints <= 2) {
-                var role = "🏳حيوان منوي";
+                var role = "بيضه 🥚";
             } else if (lvpoints <= 4) {
                 var role = "👼مولود";
             } else if (lvpoints <= 6) {
@@ -438,7 +438,7 @@ cmd({
             const lvpoints = userq.level;
             var role = "ملك✨";
             if (lvpoints <= 2) {
-                var role = "🏳حيوان منوي";
+                var role = "بيضه 🥚";
             } else if (lvpoints <= 4) {
                 var role = "👼مولود";
             } else if (lvpoints <= 6) {
@@ -525,7 +525,7 @@ cmd({
                 const lvpoints = fetchlb[i].level
                 var role = "ملك✨";
             if (lvpoints <= 2) {
-                var role = "🏳حيوان منوي";
+                var role = "بيضه 🥚";
             } else if (lvpoints <= 4) {
                 var role = "👼مولود";
             } else if (lvpoints <= 6) {
