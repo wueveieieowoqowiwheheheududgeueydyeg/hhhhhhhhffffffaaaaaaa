@@ -977,8 +977,6 @@ cmd({ on: "text" }, async(Void, citel) => {
     if (hasLeveledUp) {
         const sck1 = await Levels.fetch(citel.sender, "RandomXP");
         const lvpoints = sck1.level;
-        var role = "GOD";
-        if (lvpoints <= 2) {
             var role = "ملك✨";
             if (lvpoints <= 2) {
                 var role = "🏳حيوان منوي";
