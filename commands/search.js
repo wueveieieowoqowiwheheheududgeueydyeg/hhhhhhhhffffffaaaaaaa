@@ -166,8 +166,8 @@ cmd({
             if (!text) return citel.reply("مثال .صور لوفي")
  
             let name1 = text.split("|")[0] || `Luffy`
-            let name2 = text.split("|")[1] || `1  `
-            citel.reply(`ارسال الصور تبع ${name1} هنا`)
+            let name2 = text.split("|")[1] || `10`
+            citel.reply(`جار ارسال الـ ${name1} في الشات`)
             let nn = name2
             for (let i = 0; i < nn; i++) {
 
@@ -196,7 +196,7 @@ cmd({
             filename: __filename,
         },
         async(Void, citel, text) => {
-            let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
+            let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/couple.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
             Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `للورع` }, { quoted: citel })
             Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `للورعه` }, { quoted: citel })
