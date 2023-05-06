@@ -66,14 +66,14 @@ cmd({
             filename: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply("جيب الموقع يغبي!!");
+            if (!text) return citel.reply("Give me location.Baka!!");
             let wdata = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=ar`
+                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
             let textw = "";
-            textw += `*🌟طقس الـ  ${text}*\n\n`;
-            textw += `*الطقس:-* ${wdata.data.weather[0].main}\n`;
-            textw += `*الوصف:-* ${wdata.data.weather[0].description}\n`;
+            textw += `*🌟Weather of  ${text}*\n\n`;
+            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`;
+            textw += `*Description:-* ${wdata.data.weather[0].description}\n`;
             textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`;
             textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`;
             textw += `*Pressure:-* ${wdata.data.main.pressure}\n`;
@@ -81,7 +81,7 @@ cmd({
             textw += `*Humidity:-* ${wdata.data.wind.speed}\n`;
             textw += `*Latitude:-* ${wdata.data.coord.lat}\n`;
             textw += `*Longitude:-* ${wdata.data.coord.lon}\n`;
-            textw += `*البلد:-* ${wdata.data.sys.country}\n`;
+            textw += `*Country:-* ${wdata.data.sys.country}\n`;
 
             Void.sendMessage(
                 citel.chat, {
@@ -139,14 +139,14 @@ cmd({
             filename: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) throw `*ابحث عن اي شيء في جوجل.*`
+            if (!text) throw `*Example : ${prefix}google Who is Suhail Tech.*`
             let google = require('google-it')
             google({ 'query': text }).then(res => {
-                let text = `جار البحث عن : ${text}\n\n`
+                let text = `Google Search From : ${text}\n\n`
                 for (let g of res) {
-                    text += `➣ *العنوان* : ${g.title}\n`
-                    text += `➣ *الوصف* : ${g.snippet}\n`
-                    text += `➣ *الرابط* : ${g.link}\n\n─────────\n\n`
+                    text += `➣ *Title* : ${g.title}\n`
+                    text += `➣ *Description* : ${g.snippet}\n`
+                    text += `➣ *Link* : ${g.link}\n\n────────────────────────\n\n`
                 }
                 citel.reply(text)
             })
@@ -156,18 +156,18 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "image",
-            alias: ["img" , "صور"],
+            alias: ["img" , "صور" , "صوره" , "صورة"],
             category: "search",
             desc: "Searches Image on Google",
             use: '<text>',
             filename: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply("مثال .صور لوفي")
+            if (!text) return citel.reply("مثال .صور لوفي*")
  
             let name1 = text.split("|")[0] || `Luffy`
             let name2 = text.split("|")[1] || `10`
-            citel.reply(`جار ارسال الـ ${name1} في الشات`)
+            citel.reply(`جار ارسال الصور ${name1} بالشات`)
             let nn = name2
             for (let i = 0; i < nn; i++) {
 
@@ -178,7 +178,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: ` بوت رايزل جورج احد احدث البوتات العربيه `,
+                        caption: ` بوت رايزل احد احدث البوتات العربيه `,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
@@ -205,16 +205,16 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "iswa",
-        alias: ["تخمين","oldwa","بايو","onwa"],
+        alias: ["nowa","oldwa","bio","onwa"],
         category: "search",
         desc: "Searches in given rage about given number.",
-        use: '9677705008xx',
+        use: '9112345678xx',
         filename: __filename,
     },
     async(Void, citel, text) => {
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return citel.reply('*مثال .تخمين 9677705008xx*')
-        citel.reply(`*جار البحث عن ارقام مشابهه*`)
+        if (!inputnumber.includes('x')) return citel.reply('*You did not add x*\nExample: iswa 9196285162xx \n\nSupprt : sᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo')
+        citel.reply(`*Searching for WhatsApp account in given range...* \n *Support PLease :*  \n www.youtube.com/c/SuhailTechInfo`)
 
         function countInstances(string, word) {
             return string.split(word).length - 1;
@@ -230,9 +230,9 @@ cmd({
         } else if (random_length == 3) {
             randomxx = 1000
         }
-        var text = `*--『 البحث عن ارقام الواتساب 』--*\n\n`
-        var nobio = `\n*البايو:* || \n*مرحباً انا استخدم واتساب.*\n`
-        var nowhatsapp = `\n*ارقام غير مسجله بواتساب.*\n`
+        var text = `*--『 List of Whatsapp Numbers 』--*\n\n`
+        var nobio = `\n*Bio:* || \nHey there! I am using WhatsApp.\n`
+        var nowhatsapp = `\n*Numbers with no WhatsApp account within provided range.*\n`
         for (let i = 0; i < randomxx; i++) {
             var nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
             var status1 = nu[Math.floor(Math.random() * nu.length)]
@@ -260,7 +260,7 @@ cmd({
                 if (anu1 == '401' || anu1.status.length == 0) {
                     nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
                 } else {
-                    text += `*الأرقام:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*البايو :* ${anu1.status}\n🍁*وقت التحديث :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+                    text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
                 }
             } catch {
                 nowhatsapp += `${number0}${i}${number1}\n`
