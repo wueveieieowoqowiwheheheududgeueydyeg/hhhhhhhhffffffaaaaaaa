@@ -488,7 +488,7 @@ cmd({
             }
             let disc = citel.sender.substring(3, 7);
             let textr = '';
-            textr += `*هلا ${citel.pushName}∆*\n\n`;
+            textr += `*هلا ${citel.pushName}∆*\n*⚡البايو:* ${bioo}`;
             let ttms = `${userq.xp}` / 8;
             textr += `*🌟دورك*: ${role}\n*🟢يكسب*: ${userq.xp} / ${Levels.xpFor(
     userq.level + 1
@@ -515,7 +515,7 @@ cmd({
             filename: __filename,
         },
         async(Void, citel) => {
-            const fetchlb = await Levels.fetchLeaderboard("RandomXP", 10);
+            const fetchlb = await Levels.fetchLeaderboard("RandomXP", 15);
             let leadtext = `
 *-------------------------------*
 *----● قائمة المتصدرين ● -----*
@@ -576,7 +576,7 @@ cmd({
                 let data = await sck1.findOne({ id: fetchlb[i].userID })
                 let namew = fetchlb[i].userID
                 let ttms = fetchlb[i].xp / 8
-                leadtext += `*${i + 1}●الأسم*: ${data.name}\n*●المستوى*: ${fetchlb[i].level}\n*●نقاطه*: ${fetchlb[i].xp}\n*●رولي*: ${role}\n*●عدد رسائله*: ${ttms}\n\n`;
+                leadtext += `*${i + 1}●الأسم*: ${data.name}\n*●المستوى*: ${fetchlb[i].level}\n*●نقاطه*: ${fetchlb[i].xp}\n*●دوره*: ${role}\n*●عدد رسائله*: ${ttms}\n\n`;
             }
             return citel.reply(leadtext)
         }
@@ -979,7 +979,7 @@ cmd({ on: "text" }, async(Void, citel) => {
         const lvpoints = sck1.level;
             var role = "ملك✨";
             if (lvpoints <= 2) {
-                var role = "🏳حيوان منوي";
+                var role = "بيضه 🥚";
             } else if (lvpoints <= 4) {
                 var role = "👼مولود";
             } else if (lvpoints <= 6) {
