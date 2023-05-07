@@ -429,6 +429,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "رانك",
+	    alias: ["مستوى", "المستوى", "مستواي", "رانكي"],
             desc: "Sends rank card of user.",
             category: "group",
             filename: __filename,
@@ -488,7 +489,7 @@ cmd({
             }
             let disc = citel.sender.substring(3, 7);
             let textr = '';
-            textr += `*هلا ${citel.pushName}∆*\n*⚡البايو:* ${bioo}`;
+            textr += `*هلا ${citel.pushName}∆*\n*البايو:* ${bioo}`;
             let ttms = `${userq.xp}` / 8;
             textr += `*🌟دورك*: ${role}\n*🟢يكسب*: ${userq.xp} / ${Levels.xpFor(
     userq.level + 1
@@ -1036,13 +1037,14 @@ cmd({ on: "text" }, async(Void, citel) => {
                 },
                 caption: `
 ╔════◇
-║ *واو لقد ارتفع مستواك*
-║ *ارتفاع ملحوظ ههه⭐*
+║ *ارتفاع جديد في مستواك*
+║ *رتفاع حسبتك*
 ║ *👤الأسم*: ${citel.pushName}
+║*⚡البايو*: ${bioo}
 ║ *🎐المستوى*: ${sck1.level}🐥
 ║ *🛑يكسب*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-║ *📍دورك*: *${role}*
-║ *تمتع🥳*
+║ *دورك*: *${role}*
+║ *استمتع*
 ╚════════════╝
 `,
             }, {
