@@ -489,7 +489,7 @@ cmd({
             }
             let disc = citel.sender.substring(3, 7);
             let textr = '';
-            textr += `*هلا ${citel.pushName}∆*\n*البايو:* ${bioo}`;
+            textr += `*هلا ${citel.pushName}|∆*\n\n`;
             let ttms = `${userq.xp}` / 8;
             textr += `*🌟دورك*: ${role}\n*🟢يكسب*: ${userq.xp} / ${Levels.xpFor(
     userq.level + 1
@@ -1038,7 +1038,7 @@ cmd({ on: "text" }, async(Void, citel) => {
                 caption: `
 ╔════◇
 ║ *ارتفاع جديد في مستواك*
-║ *رتفاع حسبتك*
+║ *ارتفاع حسبتك*
 ║ *👤الأسم*: ${citel.pushName}
 ║*⚡البايو*: ${bioo}
 ║ *🎐المستوى*: ${sck1.level}🐥
