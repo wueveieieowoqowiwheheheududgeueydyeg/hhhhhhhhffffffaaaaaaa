@@ -43,6 +43,7 @@ async(Void, citel, text,{ isCreator }) => {
      //---------------------------------------------------------------------------
      cmd({
         pattern: "ملصقي",
+        alias: ["حقوقي", "سرقه", "سرقة", "take"],
         filename: __filename,
     },
     async(Void, citel, text) => {
