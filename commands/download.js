@@ -109,7 +109,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "شغل",
+            pattern: "موسيقى",
             alias: ["music"],
             desc: "Sends info about the query(of youtube video/audio).",
             category: "downloader",
