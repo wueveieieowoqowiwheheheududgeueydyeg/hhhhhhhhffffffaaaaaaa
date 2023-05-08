@@ -435,6 +435,9 @@ cmd({
             filename: __filename,
         },
         async(Void, citel, text) => {
+            var bio = await Void.fetchStatus(citel.sender);
+            var bioo = bio.status;
+            let meh = citel.sender;
             const userq = await Levels.fetch(citel.sender, "RandomXP");
             const lvpoints = userq.level;
             var role = "ملك✨";
@@ -489,7 +492,7 @@ cmd({
             }
             let disc = citel.sender.substring(3, 7);
             let textr = '';
-            textr += `*هلا ${citel.pushName}|∆*\n\n`;
+            textr += `*هلا ${citel.pushName}|∆*\n*⚡البايو:* ${bioo}`;
             let ttms = `${userq.xp}` / 8;
             textr += `*🌟دورك*: ${role}\n*🟢يكسب*: ${userq.xp} / ${Levels.xpFor(
     userq.level + 1
@@ -1040,7 +1043,6 @@ cmd({ on: "text" }, async(Void, citel) => {
 ║ *ارتفاع جديد في مستواك*
 ║ *ارتفاع حسبتك*
 ║ *👤الأسم*: ${citel.pushName}
-║*⚡البايو*: ${bioo}
 ║ *🎐المستوى*: ${sck1.level}🐥
 ║ *🛑يكسب*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
 ║ *دورك*: *${role}*
