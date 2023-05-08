@@ -492,9 +492,9 @@ cmd({
             }
             let disc = citel.sender.substring(3, 7);
             let textr = '';
-            textr += `*هلا ${citel.pushName}|∆*\n*⚡البايو:* ${bioo}`;
+            textr += `*هلا ${citel.pushName}|∆*\n*البايو:* ${bioo}\n`;
             let ttms = `${userq.xp}` / 8;
-            textr += `*🌟دورك*: ${role}\n*🟢يكسب*: ${userq.xp} / ${Levels.xpFor(
+            textr += `*دورك*: ${role}\n*يكسب*: ${userq.xp} / ${Levels.xpFor(
     userq.level + 1
   )}\n*🏡المستوى*: ${userq.level}\n*عدد الرسائل:*- ${ttms}`;
             try {
@@ -519,7 +519,7 @@ cmd({
             filename: __filename,
         },
         async(Void, citel) => {
-            const fetchlb = await Levels.fetchLeaderboard("RandomXP", 15);
+            const fetchlb = await Levels.fetchLeaderboard("RandomXP", 30);
             let leadtext = `
 *-------------------------------*
 *----● قائمة المتصدرين ● -----*
