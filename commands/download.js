@@ -18,7 +18,7 @@ var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "tgs",
+            pattern: "تجس",
             desc: "Downloads telegram stickers.",
             category: "downloader",
             filename: __filename,
@@ -109,7 +109,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "موسيقى",
+            pattern: "شغل",
             alias: ["music"],
             desc: "Sends info about the query(of youtube video/audio).",
             category: "downloader",
