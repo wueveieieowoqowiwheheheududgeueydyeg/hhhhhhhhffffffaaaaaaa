@@ -17,35 +17,35 @@ const fetch = require('node-fetch')
 
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "imdb",
+            pattern: "movie",
             category: "search",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
             filename: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
+            if (!text) return citel.reply(`*Please give me a movie name* ❗`);
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
             let imdbt = "";
             console.log(fids.data)
-            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ``` 𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
-            imdbt += "🎬Title      : " + fids.data.Title + "\n";
-            imdbt += "📅Year       : " + fids.data.Year + "\n";
-            imdbt += "⭐Rated      : " + fids.data.Rated + "\n";
-            imdbt += "📆Released   : " + fids.data.Released + "\n";
-            imdbt += "⏳Runtime    : " + fids.data.Runtime + "\n";
-            imdbt += "🌀Genre      : " + fids.data.Genre + "\n";
-            imdbt += "👨🏻‍💻Director   : " + fids.data.Director + "\n";
-            imdbt += "✍Writer     : " + fids.data.Writer + "\n";
-            imdbt += "👨Actors     : " + fids.data.Actors + "\n";
-            imdbt += "📃Plot       : " + fids.data.Plot + "\n";
-            imdbt += "🌐Language   : " + fids.data.Language + "\n";
-            imdbt += "🌍Country    : " + fids.data.Country + "\n";
-            imdbt += "🎖️Awards     : " + fids.data.Awards + "\n";
-            imdbt += "📦BoxOffice  : " + fids.data.BoxOffice + "\n";
-            imdbt += "🏙️Production : " + fids.data.Production + "\n";
-            imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n";
-            imdbt += "❎imdbVotes  : " + fids.data.imdbVotes + "";
+            imdbt += "━━━━━━━━━━━━━━━━━\n" + " ``` Movie info```\n" + "━━━━━━━━━━━━━━━━━\n";
+            imdbt += "🎬 Title      : " + fids.data.Title + "\n\n";
+            imdbt += "📅 Year       : " + fids.data.Year + "\n\n";
+            imdbt += "⭐ Rated      : " + fids.data.Rated + "\n\n";
+            imdbt += "📆 Released   : " + fids.data.Released + "\n\n";
+            imdbt += "⏳ Runtime    : " + fids.data.Runtime + "\n\n";
+            imdbt += "🌀 Genre      : " + fids.data.Genre + "\n\n";
+            imdbt += "👨🏻‍💻 Director   : " + fids.data.Director + "\n\n";
+            imdbt += "✍ Writer     : " + fids.data.Writer + "\n\n";
+            imdbt += "👨 Actors     : " + fids.data.Actors + "\n\n";
+            imdbt += "📃 Plot       : " + fids.data.Plot + "\n\n";
+            imdbt += "🌐 Language   : " + fids.data.Language + "\n\n";
+            imdbt += "🌍 Country    : " + fids.data.Country + "\n\n";
+            imdbt += "🎖️ Awards     : " + fids.data.Awards + "\n\n";
+            imdbt += "📦 BoxOffice  : " + fids.data.BoxOffice + "\n\n";
+            imdbt += "🏙️ Production : " + fids.data.Production + "\n\n";
+            imdbt += "🌟 imdbRating : " + fids.data.imdbRating + "\n\n";
+            imdbt += "❎ imdbVotes  : " + fids.data.imdbVotes + "";
             Void.sendMessage(citel.chat, {
                 image: {
                     url: fids.data.Poster,
@@ -59,7 +59,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "طقس",
+            pattern: "weather",
             category: "search",
             desc: "Sends weather info about asked place.",
             use: '<location>',
@@ -71,17 +71,17 @@ cmd({
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
             let textw = "";
-            textw += `*🌟Weather of  ${text}*\n\n`;
-            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`;
-            textw += `*Description:-* ${wdata.data.weather[0].description}\n`;
-            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`;
-            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`;
-            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`;
-            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`;
-            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`;
-            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`;
-            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`;
-            textw += `*Country:-* ${wdata.data.sys.country}\n`;
+            textw += `🌦️ ━━━ *කාලගුණ නිවේදනය* ━━━ 🌦️ ${text}\n\n\n`;
+            textw += `⛈️ *දැන් තත්වය:-* ${wdata.data.weather[0].main}\n\n`;
+            textw += `📃 *විස්තරය:-* ${wdata.data.weather[0].description}\n\n`;
+            textw += `☀️ *සාමාන්‍ය උෂ්ණත්වය:-* ${wdata.data.main.temp}\n\n`;
+            textw += `🔥 *දැනෙන්නේ:-* ${wdata.data.main.feels_like}\n\n`;
+            textw += `🌫️ *පීඩනය:-* ${wdata.data.main.pressure}\n\n`;
+            textw += `🪐 *ආර්ද්‍රතාවය:-* ${wdata.data.main.humidity}\n\n`;
+            textw += `🌪️ *සුළගේ වේගය:-* ${wdata.data.wind.speed}\n\n`;
+            textw += `🌐 *අක්ෂාංශ:-* ${wdata.data.coord.lat}\n\n`;
+            textw += `🌏 *දේශාංශ:-* ${wdata.data.coord.lon}\n\n`;
+            textw += `🌍 *රට:-* ${wdata.data.sys.country}\n\n`;
 
             Void.sendMessage(
                 citel.chat, {
@@ -139,14 +139,14 @@ cmd({
             filename: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) throw `*Example : ${prefix}google Who is Suhail Tech.*`
+            if (!text) throw `مثال : ${prefix}جوجل اخبار العاشره`
             let google = require('google-it')
             google({ 'query': text }).then(res => {
-                let text = `Google Search From : ${text}\n\n`
+                let text = `بحث جوجل : ${text}\n\n`
                 for (let g of res) {
-                    text += `➣ *Title* : ${g.title}\n`
-                    text += `➣ *Description* : ${g.snippet}\n`
-                    text += `➣ *Link* : ${g.link}\n\n────────────────────────\n\n`
+                    text += `➣ *العنوان* : ${g.title}\n`
+                    text += `➣ *الوصف* : ${g.snippet}\n`
+                    text += `➣ *الرابط* : ${g.link}\n\n──────────────\n\n`
                 }
                 citel.reply(text)
             })
@@ -155,19 +155,21 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "image",
-            alias: ["img" , "صور" , "صوره" , "صورة"],
+            pattern: "img",
+            alias: ["image", "صور", "صورة", "صوره"],
             category: "search",
             desc: "Searches Image on Google",
             use: '<text>',
             filename: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply("مثال .صور لوفي*")
- 
-            let name1 = text.split("|")[0] || `Luffy`
-            let name2 = text.split("|")[1] || `10`
-            citel.reply(`جار ارسال الصور ${name1} بالشات`)
+            if (!text) return citel.reply("ابحث عن الصوره
+            
+            ")
+            if (!text) return reply("هلا استلم");
+            let name1 = text.split("|")[0]
+            let name2 = text.split("|")[5] || `5`
+            citel.reply(`*ارسال ${name2} الصور في ${name1} المحادثه*`)
             let nn = name2
             for (let i = 0; i < nn; i++) {
 
@@ -178,7 +180,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: ` بوت رايزل احد احدث البوتات العربيه `,
+                        caption: tlang().footer,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
@@ -198,23 +200,24 @@ cmd({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/couple.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `للورع` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `للورعه` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `للناعم` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `للناعمه` }, { quoted: citel })
         }
     )
     //---------------------------------------------------------------------------
 cmd({
-        pattern: "iswa",
-        alias: ["nowa","oldwa","bio","onwa"],
+        pattern: "snumber",
+        alias: ["sn"],
         category: "search",
+        react: "🏆",
         desc: "Searches in given rage about given number.",
         use: '9112345678xx',
         filename: __filename,
     },
     async(Void, citel, text) => {
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return citel.reply('*You did not add x*\nExample: iswa 9196285162xx \n\nSupprt : sᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo')
-        citel.reply(`*Searching for WhatsApp account in given range...* \n *Support PLease :*  \n www.youtube.com/c/SuhailTechInfo`)
+        if (!inputnumber.includes('x')) return citel.reply('You did not add x\nExample: iswa 9196285162xx')
+        citel.reply(`Searching for WhatsApp account in given range...`)
 
         function countInstances(string, word) {
             return string.split(word).length - 1;
