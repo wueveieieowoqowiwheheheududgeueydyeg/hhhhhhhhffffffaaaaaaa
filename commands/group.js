@@ -674,26 +674,26 @@ cmd({
             if (!citel.isGroup) return citel.reply(tlang().group);
             if (!isBotAdmins) return citel.reply(tlang().botAdmin);
             if (!isAdmins) return citel.reply(tlang().admin);
-            if (text.split(" ")[0] === "close") {
+            if (text.split(" ")[0] === "قفل") {
                 await Void.groupSettingUpdate(citel.chat, "announcement")
                     .then((res) => reply(`Group Chat Muted :)`))
                     .catch((err) => console.log(err));
-            } else if (text.split(" ")[0] === "open") {
+            } else if (text.split(" ")[0] === "فتح") {
                 await Void.groupSettingUpdate(citel.chat, "not_announcement")
                     .then((res) => reply(`Group Chat Unmuted :)`))
                     .catch((err) => console.log(err));
             } else {
                 let buttons = [{
-                        buttonId: `${prefix}group open`,
+                        buttonId: `${prefix}قروب فتح`,
                         buttonText: {
-                            displayText: "📍فتح",
+                            displayText: "فتح",
                         },
                         type: 1,
                     },
                     {
-                        buttonId: `${prefix}group close`,
+                        buttonId: `${prefix}قروب غلق`,
                         buttonText: {
-                            displayText: "📍غلق",
+                            displayText: "غلق",
                         },
                         type: 1,
                     },
